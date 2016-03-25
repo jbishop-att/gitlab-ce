@@ -77,7 +77,7 @@ echo "Configuring GitLab package..."
 /var/lib/dpkg/info/${RELEASE_PACKAGE}.preinst upgrade
 
 #echo "Configuring GitLab..."
-#gitlab-ctl reconfigure
+gitlab-ctl reconfigure
 
 # Tail all logs
 gitlab-ctl tail &
