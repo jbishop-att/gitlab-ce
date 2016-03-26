@@ -8,22 +8,22 @@
     "type": "DOCKER",
     "docker": {
       "network": "HOST",
-      "image": "gitlab/gitlab-ce:latest"
+      "image": "jbishop-att/gitlab-ce:latest"
     },
     "volumes": [
       {
           "containerPath": "/etc/gitlab",
-          "hostPath": "/var/data/etc/gitlab",
+          "hostPath": "/srv/gitlab/etc",
           "mode": "RW"
       },
       {
           "containerPath": "/var/opt/gitlab",
-          "hostPath": "/var/data/opt/gitlab",
+          "hostPath": "/srv/gitlab/opt",
           "mode": "RW"
       },
       {
           "containerPath": "/var/log/gitlab",
-          "hostPath": "/var/data/log/gitlab",
+          "hostPath": "/srv/gitlab/log",
           "mode": "RW"
       }
     ]

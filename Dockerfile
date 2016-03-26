@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Kamil Trzciński <kamil@gitlab.com>
+MAINTAINER James Bishop <james.bishop@otechresources.com>
 
 # Install required packages
 RUN apt-get update -q \
@@ -27,7 +27,7 @@ ENV TERM xterm
 EXPOSE 443 80 22
 
 # Define data volumes
-VOLUME ["/etc/gitlab", "/var/opt/gitlab", "/var/log/gitlab"]
+VOLUME ["/etc/gitlab", "/srv/opt/gitlab", "/srv/log/gitlab"]
 
 # Wrapper to handle signal, trigger runit and reconfigure GitLab
 CMD ["/assets/wrapper"]
