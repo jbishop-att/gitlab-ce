@@ -81,6 +81,8 @@ mkdir -p /var/log/gitlab/sshd
 echo "Starting services..."
 GITLAB_OMNIBUS_CONFIG=/opt/gitlab/embedded/bin/runsvdir-start &
 
+${GITLAB_OMNIBUS_CONFIG}
+
 # Configure gitlab package
 # WARNING:
 # the preinst script has the database backup
