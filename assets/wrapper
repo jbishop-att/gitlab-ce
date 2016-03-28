@@ -3,17 +3,13 @@
 set -e
 
 chmod 755 /
-if [[ ! -e /etc/hosts ]]; then
-	echo "setting up /etc/hosts"
-	echo "127.0.0.1 localhost localhost.localdomain" >>/etc/hosts
-	chmod 644 /etc/hosts
-fi
+echo "setting up /etc/hosts"
+echo "127.0.0.1 localhost localhost.localdomain" >>/etc/hosts
+chmod 644 /etc/hosts
 
-if [[ ! -e /etc/resolv.conf ]]; then
-	echo "setting up resolv.conf"
-	echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-	chmod 644 /etc/resolv.conf
-fi
+echo "setting up resolv.conf"
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+chmod 644 /etc/resolv.conf
 
 function sigterm_handler() {
     echo "SIGTERM signal received, try to gracefully shutdown all services..."
