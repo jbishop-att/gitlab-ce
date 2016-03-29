@@ -76,8 +76,8 @@ mkdir -p /var/log/gitlab/sshd
 # Start service manager
 echo "Starting services..."
 GITLAB_OMNIBUS_CONFIG=/opt/gitlab/embedded/bin/runsvdir-start &
+/opt/gitlab/embedded/bin/runsvdir-start &
 
-${GITLAB_OMNIBUS_CONFIG}
 
 # Configure gitlab package
 # WARNING:
@@ -89,6 +89,7 @@ echo "Configuring GitLab package..."
 
 echo "Configuring GitLab..."
 gitlab-ctl reconfigure
+
 
 # Tail all logs
 gitlab-ctl tail &
